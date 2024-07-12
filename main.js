@@ -5,6 +5,7 @@
 
 
 const url = "https://raw.githubusercontent.com/DominantDuck/blot/main/spotify.txt";
+const { Turtle, trim, merge, cut, cover, rotate, scale, translate, originate, iteratePoints, pointInside, resample, join, copy, union, difference, intersection, xor, getAngle, getPoint, getNormal, bounds, nurbs, catmullRom, rand, setRandSeed, randInRange, randIntInRange, noise } = blotToolkit;
 
 var height,width = 0;
 
@@ -26,12 +27,11 @@ function getDimensions (data) {
     height = heightCount;
     width = widthCount;
 
-    console.log(h: ${height}, w: ${width})
+    console.log(`h: ${height}, w: ${width}`)
 }
 
 function parseBinaryData(data) {
     let individual = [];
-
   
     for (let x = 0; x < height; x++) {
       individual[x] = [];
@@ -39,11 +39,31 @@ function parseBinaryData(data) {
           individual[x][y] = lines[x].charAt(y) 
       }
     }
-
+  return individual;
   console.log(individual)
 }
 
-const dataArray = parseBinaryData(image);
+function draw(arr) {
+    for (let x = 0; x < height; x++) {
+          for (let y = 0; y < width; y++) {
+               if(arr[x][y] === "1" && y < width-1) {
+                   if (arr[x][y+1] === "1") {
+                     drawLines([
+                          [
+                            [y,height-x],
+                            [(y+1),height-x]
+                          ]
+                      ]);
+                   }
+               }
+          }
+     }
+}
 
-getDimensions (image)
-parseBinaryData(image)
+getDimensions(image);
+
+
+const dataArray = parseBinaryData(image);
+draw(dataArray);
+
+
