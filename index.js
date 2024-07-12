@@ -1,7 +1,7 @@
-// welcome to blot!
-
-// check out this guide to learn how to program in blot
-// https://blot.hackclub.com/editor?guide=start
+/*
+@title: SpotifyCodeDisplay
+@author: DominantDuck
+*/
 
 
 const url = "https://raw.githubusercontent.com/DominantDuck/blot/main/spotify.txt";
