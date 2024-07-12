@@ -5,6 +5,8 @@
 
 
 const url = "https://raw.githubusercontent.com/DominantDuck/blot/main/spotify.txt";
+const url = "https://raw.githubusercontent.com/DominantDuck/blot/main/goldschool.txt";
+const url = "https://raw.githubusercontent.com/DominantDuck/blot/main/newmusicfriday.txt";
 const { Turtle, trim, merge, cut, cover, rotate, scale, translate, originate, iteratePoints, pointInside, resample, join, copy, union, difference, intersection, xor, getAngle, getPoint, getNormal, bounds, nurbs, catmullRom, rand, setRandSeed, randInRange, randIntInRange, noise } = blotToolkit;
 
 var height,width = 0;
